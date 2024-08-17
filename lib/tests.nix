@@ -235,14 +235,12 @@ let
           ):  # taken from <nixpkgs/nixos/tests/installer.nix>
               start_command = [
                   "${pkgs.qemu_test}/bin/qemu-system-aarch64",
-                  "-accel",
-                  "kvm:hvf:tcg",
                   "-machine",
-                  "virt",
+                  "type=virt,accel=kvm:hvf:tcg",
                   "-cpu",
                   "max,pauth-impdef=on",
                   "-m",
-                  "4096",
+                  "1024",
                   "-virtfs",
                   "local,path=/nix/store,security_model=none,mount_tag=nix-store",
                   *disks(oldmachine, ${toString num-disks})
