@@ -235,6 +235,7 @@ let
           ):  # taken from <nixpkgs/nixos/tests/installer.nix>
               start_command = [
                   "${pkgs.qemu_test}/bin/qemu-system-aarch64",
+                  "-accel=kvm:hvf:tcg",
                   "-cpu",
                   "max",
                   "-m",
