@@ -239,9 +239,9 @@ let
                   "-machine",
                   "virt",
                   "-cpu",
-                  "max",
+                  "max,pauth-impdef=on",
                   "-m",
-                  "1024",
+                  "4096",
                   "-virtfs",
                   "local,path=/nix/store,security_model=none,mount_tag=nix-store",
                   *disks(oldmachine, ${toString num-disks})
