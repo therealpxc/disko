@@ -236,6 +236,8 @@ let
               start_command = [
                   "${pkgs.qemu_test}/bin/qemu-system-aarch64",
                   "-accel=kvm:hvf:tcg",
+                  "-machine",
+                  "virt",
                   "-cpu",
                   "max",
                   "-m",
